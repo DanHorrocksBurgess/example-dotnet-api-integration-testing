@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/bin": true,
+    "**/obj": true
+  },
+  "cSpell.words": [
+    "Serilog"
+  ],
+}
