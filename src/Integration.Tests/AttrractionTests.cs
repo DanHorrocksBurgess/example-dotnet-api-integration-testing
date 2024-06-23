@@ -68,4 +68,17 @@ public class AttractionTests(SharedApiTestFixture fixture)
         Assert.Equal(attractionGetResponseData.Name, attraction.Name);
         Assert.Equal(attractionGetResponseData.ParkName, attraction.ParkName);
     }
+
+    [Fact]
+    public async void GetSingleAttraction_ByInvalidAttractionId_ReturnsResponse200AndAttraction()
+    {
+        // Arrange
+        var request = new HttpRequestMessage(HttpMethod.Get, "/attraction/9999");
+
+        // Act
+        var response = await _client.SendAsync(request);
+
+        // Assert
+        Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
 }
